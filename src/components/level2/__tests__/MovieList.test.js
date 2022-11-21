@@ -11,12 +11,15 @@ describe('MovieList.vue', () => {
   });
 
   // TODO: Why is this a bad test? Reason your answer
+  // That because we are checking if the list contains 4 movies, it will break if we added more movies
+  // we should check if it has more than one movie :)
+
   // TODO: Rework the test so it follows best practices
   it('should render movie list', async () => {
     const wrapper = shallowMount(MovieList);
     const movieCards = wrapper.findAllComponents(MovieCard);
 
-    expect(movieCards.length).toBe(4);
+    expect(movieCards.length).toBeGreaterThan(1);
   });
 
   // TODO: write this test!
