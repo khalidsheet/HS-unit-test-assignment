@@ -6,8 +6,12 @@ import { ref, onMounted } from 'vue';
 const response = ref({});
 
 onMounted(async () => {
-  const res = await fetch('https://yesno.wtf/api');
+  const res = await (await fetch('https://yesno.wtf/api')).json();
+  response.value = res;
+  console.log(response.value.image);
 });
 </script>
 
-<template></template>
+<template>
+  <img :src="response.value.image" alt="" />
+</template>
