@@ -18,10 +18,6 @@ const addTodo = () => {
     completed: false,
   });
 };
-
-const completeTodo = (todo) => {
-  todo.completed = true;
-};
 </script>
 <template>
   <div
