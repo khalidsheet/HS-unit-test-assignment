@@ -10,5 +10,5 @@ const todos = ref([
 ]);
 </script>
 <template>
-  <div></div>
+  <div v-for="todo in todos" data-test="todo">{{ todo.text }}</div>
 </template>
