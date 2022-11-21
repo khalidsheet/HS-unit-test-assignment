@@ -10,5 +10,7 @@ const todos = ref([
 ]);
 </script>
 <template>
-  <div v-for="todo in todos" data-test="todo">{{ todo.text }}</div>
+  <div data-test="todo">
+    <div v-for="todo in todos" :key="todo.id">{{ todo.text }}</div>
+  </div>
 </template>
