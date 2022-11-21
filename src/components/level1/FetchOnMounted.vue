@@ -6,12 +6,16 @@ import { ref, onMounted } from 'vue';
 const response = ref({});
 
 onMounted(async () => {
-  const res = await (await fetch('https://yesno.wtf/api')).json();
-  response.value = res;
-  console.log(response.value.image);
+  try {
+    response.value = await (await fetch('https://yesno.wtf/api')).json();
+  } catch (e) {}
 });
+
+console.log(response.value);
 </script>
 
 <template>
-  <img :src="response.value.image" alt="" />
+  <img :src="response.image" />
+  <div v-if="!response.image">loading</div>
+  <div v-if="!response.ok">error</div>
 </template>

@@ -45,7 +45,7 @@ describe('FetchOnMounted.vue', () => {
     const wrapper = mount(FetchOnMounted);
 
     // TIP: not waiting for async op!
-    // await flushPromises();
+    await flushPromises();
     expect(wrapper.text()).toContain('loading');
   });
 

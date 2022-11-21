@@ -39,6 +39,7 @@ const activeComponent = shallowRef(examples[0]);
       <template v-else>
         <Suspense>
           <component :is="activeComponent.component" />
+          <!-- <template #fallback>loading</template> -->
         </Suspense>
       </template>
     </div>
